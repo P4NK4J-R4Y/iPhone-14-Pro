@@ -1,0 +1,369 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition-timing-function: linear;
+}
+body{
+    display: flex;
+    background-color: rgb(221, 248, 239);
+}
+
+.display {
+  height: 100vh;
+  width: 50%;
+  /* border: 2px solid red; */
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items:flex-end;
+  position: relative;
+  padding-right: 10px;
+}
+.front-look{
+  transition: all 2s ease-in-out;
+  z-index: 5;
+  transform: rotate(10deg);
+}
+.front-look>*{
+  -webkit-box-reflect: below 25px linear-gradient(rgba(0, 0, 0, 0), rgba(86, 69, 69, 0.2));
+}
+.front-look:hover{
+  transform: scale(1.3);
+  z-index: 6;
+}
+
+.iphone-upper-side {
+  width: 250px;
+  height: 50px;
+  border: 1px solid black;
+  border-top-left-radius: 35px;
+  border-top-right-radius: 35px;
+  position: relative;
+  top: 37px;
+  background: linear-gradient(
+    to left,
+    rgb(255, 255, 255),
+    rgb(0, 0, 0)
+  );
+}
+.iphone {
+  width: 250px;
+  height: 500px;
+  position: relative;
+  border: 5px solid black;
+  background-color: black;
+  z-index:2;
+  border-radius: 25px;
+  overflow: hidden;
+  
+}
+.iphone img {
+  height: 101%;
+  width: 101%;
+  opacity: 1;
+  transition: all 1s .1s ease-in-out;
+}
+.dynamic-island {
+  position: absolute;
+  top: 4px;
+  left: 50%;
+  background-color: rgb(0, 0, 0);
+  height: 18px;
+  width: 30%;
+  border-radius: 60px;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* border: 1px solid red; */
+}
+.dynamic-island:hover{
+  animation: expand 2s 0.7s ease-in;
+}
+@keyframes expand {
+  0%,
+  100% {
+    height: 18px;
+    width: 30%;
+  }
+  25%{
+    height: 30px;
+    width: 70%;
+  }
+  40% {
+    height: 40px;
+    width: 90%;
+  }
+  55%{
+    height: 50px;
+    width: 90%;
+  }
+  70% {
+    height: 50px;
+    width: 90%;
+  }
+  90% {
+    height: 50px;
+    width: 90%;
+  }
+}
+.caller-profile {
+  /* border: 2px solid red; */
+  height: 95%;
+  width: 50%;
+  visibility: hidden;
+  opacity: 0;
+  
+}
+.dynamic-island:hover .caller-profile {
+  animation: profile 1.5s 1.3s ease-in;
+}
+@keyframes profile {
+  0%,
+  100% {
+    visibility: hidden;
+    opacity: 0;
+  }
+  25% {
+    visibility: visible;
+    opacity: 1;
+  }
+  40% {
+    visibility: visible;
+    opacity: 1;
+  }
+  65%{
+    visibility: visible;
+    opacity: 1;
+  }
+  70% {
+    visibility: visible;
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;
+  }
+}
+.caller-img {
+  /* border: 1px solid red; */
+  border-radius: 50%;
+  height: 90%;
+  float: left;
+  margin: 1px 5px;
+}
+.caller-name {
+  margin-top: 8px;
+  z-index: 2;
+}
+.caller-name #mob {
+  color: rgb(156, 156, 156);
+  font-size: 0.8rem;
+}
+.caller-name #name {
+  color: aliceblue;
+}
+.call-btn {
+  /* border: 2px solid red; */
+  width: 45%;
+  height: 95%;
+  position: relative;
+  visibility: hidden;
+  opacity: 0;
+}
+.dynamic-island:hover .call-btn {
+  animation: callbutton 1.5s 1.3s ease-in;
+}
+@keyframes callbutton {
+    0%,
+    100% {
+      visibility: hidden;
+      opacity: 0;
+    }
+    25% {
+      visibility: visible;
+      opacity: 1;
+    }
+    40% {
+      visibility: visible;
+      opacity: 1;
+    }
+    65%{
+      visibility: visible;
+      opacity: 1;
+    }
+    70% {
+      visibility: visible;
+      opacity: 1;
+    }
+    90% {
+      opacity: 0;
+    }
+}
+.call-btn .hang-up-btn {
+  height: 80%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 7px;
+}
+.call-btn .pick-up-btn {
+  position: absolute;
+  height: 80%;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 8px;
+}
+.iphone-down-side {
+  width: 250px;
+  height: 50px;
+  border: 1px solid black;
+  border-bottom-left-radius: 35px;
+  border-bottom-right-radius: 35px;
+  position: relative;
+  top: -67px;
+  background-color: rgb(23, 23, 23);
+}
+
+
+
+
+
+/* backside css */
+
+.back{
+  height: 100vh;
+  width: 50%;
+  /* border: 2px solid red; */
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  position: relative;
+  padding-right: 10px;
+  align-items:flex-start;
+}
+.rear-look{
+  transition: all 2s ease-in;
+  z-index: 3;
+  transform: rotate(-5deg);
+}
+.rear-look>*{
+  -webkit-box-reflect: below 25px linear-gradient(rgba(0, 0, 0, 0), rgba(86, 69, 69, 0.2));
+}
+.rear-look:hover{
+  transform:translate(100px) scale(1.3) rotate(5deg);
+  z-index: 6;
+}
+.backside{
+  width: 250px;
+  height: 500px;
+  position: relative;
+  border: 3px solid rgb(140, 140, 140);
+  background-color: black;
+  z-index: 2;
+  border-radius: 26px;
+  overflow: hidden;
+}
+.backcam-box{
+    border: 4px solid rgba(102, 102, 102, 0.986);
+    height: 27%;
+    width: 50%;
+    border-radius:26px ;
+    margin: 10px 9px;
+    display: flex;
+}
+.apple-logo{
+    height: 80px;
+    width: 80px;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translateY(-50%);
+    transform: translateX(-50%);
+    /* border: 1px solid greenyellow; */
+    background-color: rgb(0, 0, 0);
+    background-image: url(./assets/logo.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-blend-mode:hard-light;
+}
+.left-box,.right-box{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.first-cam{
+    height: 44%;
+    width: 100%;
+    background-image: url(./assets/cam.png);
+    background-repeat: no-repeat;
+    background-size:contain ;
+    margin-left: 4px;
+}
+.sec-cam{
+    height: 44%;
+    width: 100%;
+    background-image: url(./assets/cam.png);
+    background-repeat: no-repeat;
+    background-size:contain ;
+    margin-left: 4px;
+}
+.flash{
+    background-color: rgba(255, 255, 255, 0.792);
+    height: 25px;
+    width: 25px;
+    border-radius:50%;
+    margin-left: 16px;
+    margin-top: 5px;
+    position: relative;
+}
+.flash-in{
+    background-color: rgba(146, 145, 145, 0.529);
+    height:20px;
+    width:20px;
+    border-radius:50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+}
+.third-cam{
+    height: 44%;
+    width: 100%;
+    background-image: url(./assets/cam.png);
+    background-repeat: no-repeat;
+    background-size:contain ;
+    margin-right: 4px;
+}
+.sensor{
+    background-color: rgb(63, 63, 63);
+    height: 20px;
+    width:20px;
+    border-radius: 50%;
+    margin-left: 20px;
+    margin-bottom: 5px;
+}
+
+
+/* media responsiveness */
+
+@media ( max-width:700px){
+  .display, .back{
+    display: none;
+  }
+  body{
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+  }
+  body::after{
+    content:"Please open this website in Tablets & Laptops";
+    margin: 10%;
+    color: rgb(51, 217, 217);
+    font-size: 2.3rem;
+    font-weight: bold;
+    font-family:'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+}
